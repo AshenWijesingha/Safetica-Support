@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safetica Management Service - Complete Troubleshooting Guide</title>
+    <title>Safetica Server - Complete Setup & Troubleshooting Guide</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background: white;
@@ -56,13 +56,13 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 1rem;
         }
@@ -76,38 +76,47 @@
             backdrop-filter: blur(10px);
         }
 
-        .nav-menu {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
+        .quick-nav {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 15px;
             margin-bottom: 2rem;
-            border-left: 5px solid #3498db;
+            border: 2px solid #dee2e6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
         }
 
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1rem;
         }
 
         .nav-item {
             background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #e1e8ed;
+            padding: 1.2rem;
+            border-radius: 10px;
+            border: 2px solid transparent;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             border-color: #3498db;
         }
 
-        .nav-item h3 {
+        .nav-item h4 {
             color: #2c3e50;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
@@ -118,53 +127,158 @@
             color: #666;
         }
 
+        .common-issues {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .common-issues h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .common-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .common-issue-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .common-issue-card h4 {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .common-issue-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
         .section {
             margin-bottom: 3rem;
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e1e8ed;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid #e1e8ed;
         }
 
         .section-header {
             background: linear-gradient(135deg, #34495e, #2c3e50);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             position: relative;
         }
 
         .section-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
         }
 
         .section-header p {
             opacity: 0.9;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .section-content {
+            padding: 2.5rem;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
             padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .download-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .download-link {
+            display: inline-block;
+            background: white;
+            color: #27ae60;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        .install-steps {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 2rem;
+            border-radius: 0 10px 10px 0;
+            margin: 2rem 0;
+        }
+
+        .install-steps h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .install-steps ol {
+            margin-left: 1.5rem;
+        }
+
+        .install-steps li {
+            margin-bottom: 0.8rem;
+            font-weight: 500;
         }
 
         .issue-card {
             background: #f8f9fa;
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            margin-bottom: 2rem;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .issue-card:hover {
-            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: #3498db;
         }
 
         .issue-header {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 2rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -173,15 +287,16 @@
 
         .issue-title {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .toggle-icon {
             transition: transform 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .issue-content {
-            padding: 1.5rem;
+            padding: 2rem;
             display: none;
         }
 
@@ -190,106 +305,70 @@
         }
 
         .symptoms, .reason, .fix {
-            margin-bottom: 1.5rem;
-        }
-
-        .symptoms h4, .reason h4, .fix h4 {
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.3rem;
-            border-bottom: 2px solid #ecf0f1;
-            font-size: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
         }
 
         .symptoms {
-            border-left: 4px solid #f39c12;
-            padding-left: 1rem;
+            border-left: 5px solid #f39c12;
             background: #fef9e7;
         }
 
         .reason {
-            border-left: 4px solid #e74c3c;
-            padding-left: 1rem;
+            border-left: 5px solid #e74c3c;
             background: #fdf2f2;
         }
 
         .fix {
-            border-left: 4px solid #27ae60;
-            padding-left: 1rem;
+            border-left: 5px solid #27ae60;
             background: #f0f8f0;
+        }
+
+        .symptoms h4, .reason h4, .fix h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+            padding-bottom: 0.5rem;
         }
 
         .code-block {
             background: #2c3e50;
             color: #ecf0f1;
-            padding: 1rem;
-            border-radius: 6px;
+            padding: 1.2rem;
+            border-radius: 8px;
             font-family: 'Courier New', monospace;
-            margin: 0.5rem 0;
+            margin: 1rem 0;
             overflow-x: auto;
             font-size: 0.9rem;
         }
 
         .warning-box {
             background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-left: 5px solid #fdcb6e;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
         }
 
         .info-box {
             background: #d1ecf1;
-            border: 1px solid #bee5eb;
-            border-left: 5px solid #17a2b8;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-
-        .download-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .download-link {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 1rem;
-            text-align: center;
+            border: 2px solid #bee5eb;
+            border-left: 6px solid #17a2b8;
+            padding: 1.2rem;
             border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            margin: 1.5rem 0;
         }
 
-        .download-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-
-        .footer {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            margin-left: -20px;
-            margin-right: -20px;
-            margin-bottom: -20px;
-        }
-
-        ol, ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
+        .success-box {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            border-left: 6px solid #28a745;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
         }
 
         .search-box {
@@ -299,17 +378,73 @@
 
         .search-input {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #e1e8ed;
-            border-radius: 25px;
-            font-size: 1rem;
+            padding: 1.2rem;
+            border: 3px solid #e1e8ed;
+            border-radius: 30px;
+            font-size: 1.1rem;
             outline: none;
             transition: all 0.3s ease;
+            background: white;
         }
 
         .search-input:focus {
             border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+        }
+
+        .search-results {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: -20px;
+        }
+
+        .net-framework-details {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.3);
+        }
+
+        .net-framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .net-option {
+            background: rgba(255,255,255,0.1);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .net-option h5 {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .net-option p {
+            font-size: 0.85rem;
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
@@ -318,11 +453,15 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .nav-grid {
+            .nav-grid, .common-grid, .download-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .section-content {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -331,517 +470,808 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1>🛡️ Safetica Management Service</h1>
-                <p class="subtitle">Complete Troubleshooting & Knowledge Base Guide</p>
-                <div class="version-badge">Professional Edition | v9.9.31+</div>
+                <h1>🛡️ Safetica Server</h1>
+                <p class="subtitle">Complete Setup, Installation & Troubleshooting Guide</p>
+                <div class="version-badge">Professional Edition | Latest Version 2024</div>
             </div>
         </header>
 
         <div class="search-box">
-            <input type="text" class="search-input" placeholder="🔍 Search troubleshooting topics..." id="searchInput">
+            <input type="text" class="search-input" placeholder="🔍 Search setup steps, troubleshooting topics, error messages..." id="searchInput">
+            <div class="search-results" id="searchResults"></div>
         </div>
 
-        <nav class="nav-menu">
+        <!-- Common Issues Section - Top Priority -->
+        <div class="common-issues">
+            <h2>🚨 Most Common Issues (Check These First!)</h2>
+            <div class="common-grid">
+                <div class="common-issue-card">
+                    <h4>❌ Installation Fails</h4>
+                    <p>Missing .NET Framework 4.8.1 or insufficient permissions. Ensure Windows is updated and run as administrator.</p>
+                </div>
+                <div class="common-issue-card">
+                    <h4>🗄️ Database Full (10GB Limit)</h4>
+                    <p>SQL Express reached capacity. Setup archiving tasks or upgrade to SQL Standard. Check disk space immediately.</p>
+                </div>
+                <div class="common-issue-card">
+                    <h4>🔌 Cannot Connect to Console</h4>
+                    <p>SMS service stopped or database connection failed. Check Activity Monitor and SQL server status.</p>
+                </div>
+                <div class="common-issue-card">
+                    <h4>⏱️ Logs Not Real-Time</h4>
+                    <p>Performance issues or resource constraints. Monitor Task Manager and check SMS hardware requirements.</p>
+                </div>
+                <div class="common-issue-card">
+                    <h4>🔄 Update Timeouts</h4>
+                    <p>STAService won't stop due to full queues. Redirect clients temporarily or wait for queue processing.</p>
+                </div>
+                <div class="common-issue-card">
+                    <h4>🔧 SQL Connection Errors</h4>
+                    <p>Network protocols disabled or firewall blocking. Enable TCP/IP and Named Pipes in SQL Configuration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <nav class="quick-nav">
+            <h3>📋 Quick Navigation Guide</h3>
             <div class="nav-grid">
-                <a href="#activity-monitor" class="nav-item">
-                    <h3>📊 Activity Monitor</h3>
-                    <p>Monitor SMS status and diagnose performance issues</p>
+                <a href="#server-setup" class="nav-item">
+                    <h4>🚀 Safetica Server Setup</h4>
+                    <p>Download, install, and configure Safetica Management Server</p>
                 </a>
-                <a href="#installation" class="nav-item">
-                    <h3>🔧 Installation Issues</h3>
+                <a href="#prerequisites" class="nav-item">
+                    <h4>⚙️ Prerequisites & Requirements</h4>
+                    <p>.NET Framework, SQL Server, and system requirements</p>
+                </a>
+                <a href="#installation-issues" class="nav-item">
+                    <h4>🔧 Installation Troubleshooting</h4>
                     <p>SQL setup, prerequisites, and common installation problems</p>
                 </a>
-                <a href="#general-issues" class="nav-item">
-                    <h3>⚠️ General Issues</h3>
-                    <p>Disk space, logging, and real-time processing problems</p>
+                <a href="#activity-monitor" class="nav-item">
+                    <h4>📊 Activity Monitor</h4>
+                    <p>Monitor SMS status and diagnose performance issues</p>
                 </a>
-                <a href="#update-issues" class="nav-item">
-                    <h3>🔄 Update Issues</h3>
-                    <p>Failed updates, service timeouts, and recovery procedures</p>
+                <a href="#general-issues" class="nav-item">
+                    <h4>⚠️ General Troubleshooting</h4>
+                    <p>Disk space, logging, and operational problems</p>
                 </a>
                 <a href="#database-issues" class="nav-item">
-                    <h3>🗄️ Database Issues</h3>
+                    <h4>🗄️ Database Issues</h4>
                     <p>Connection problems, full databases, and maintenance</p>
                 </a>
-                <a href="#sql-setup" class="nav-item">
-                    <h3>💾 SQL Setup</h3>
-                    <p>SQL Server installation, configuration, and network setup</p>
+                <a href="#update-issues" class="nav-item">
+                    <h4>🔄 Update Troubleshooting</h4>
+                    <p>Failed updates, timeouts, and recovery procedures</p>
+                </a>
+                <a href="#sql-install-tips" class="nav-item">
+                    <h4>🗄️ SQL Installation Tips</h4>
+                    <p>Automatic and manual SQL setup guidance</p>
                 </a>
             </div>
         </nav>
 
+        <!-- Server Setup Section -->
+        <section id="server-setup" class="section">
+            <div class="section-header">
+                <h2>🚀 Safetica Server Setup & Installation</h2>
+                <p>Complete guide to download, install, and configure Safetica Management Server</p>
+            </div>
+            <div class="section-content">
+                <div class="download-section">
+                    <h3>📥 Official Download Links</h3>
+                    <div class="download-grid">
+                        <div class="download-card">
+                            <h4>🛡️ Safetica Server</h4>
+                            <p>Main installation package (~1GB)</p>
+                            <a href="https://support.safetica.com/en/knowledge-base/safetica-server-installation" class="download-link" target="_blank">Download Server<grok-card data-id="1087ae" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>👥 Partner Version</h4>
+                            <p>Enhanced features for partners</p>
+                            <a href="https://portal.safetica.com/" class="download-link" target="_blank">Partner Portal<grok-card data-id="1b6b9e" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>💻 Agent Only</h4>
+                            <p>Client installation package (MSI)</p>
+                            <a href="https://support.safetica.com/en/knowledge-base/install-safetica" class="download-link" target="_blank">Download Agent<grok-card data-id="fe434c" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>📚 Documentation</h4>
+                            <p>Installation guides and manuals</p>
+                            <a href="https://support.safetica.com" class="download-link" target="_blank">Support Portal<grok-card data-id="10436f" data-type="citation_card"></grok-card></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="install-steps">
+                    <h4>🎯 Automatic Installation (Recommended)</h4>
+                    <ol>
+                        <li><strong>Download</strong> safetica_setup.exe from official link above</li>
+                        <li><strong>Run as Administrator</strong> and select your preferred language</li>
+                        <li><strong>Choose "Automatic Installation"</strong> for new deployments</li>
+                        <li><strong>SQL Express Installation:</strong> Will be configured automatically if not present</li>
+                        <li><strong>Service Account:</strong> "Safetica" user created with SYSADMIN permissions</li>
+                        <li><strong>Default Password:</strong> <code>S@fetic@2004</code></li>
+                        <li><strong>Instance Name:</strong> <code>SERVERNAME\SAFETICA</code></li>
+                        <li><strong>Complete Installation</strong> and access console via web browser</li>
+                    </ol>
+                </div>
+
+                <div class="install-steps">
+                    <h4>🔧 Manual Installation (Existing SQL Server)</h4>
+                    <ol>
+                        <li><strong>Download</strong> safetica_setup.exe</li>
+                        <li><strong>Run installer</strong> and choose "Manual Installation"</li>
+                        <li><strong>Select Components:</strong> Choose "Safetica Server" for both console and server</li>
+                        <li><strong>SQL Configuration:</strong> Enter existing SQL server details</li>
+                        <li><strong>Database Connection:</strong> Specify IP/server name and credentials</li>
+                        <li><strong>Multiple Instances:</strong> Use format <code>servername\INSTANCE</code></li>
+                        <li><strong>Account Permissions:</strong> Ensure SYSADMIN or minimum DB_CREATOR + VIEW SERVER STATE</li>
+                        <li><strong>Complete Setup</strong> and test connectivity</li>
+                    </ol>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Post-Installation Verification:</h4>
+                    <ul>
+                        <li>Access Management Console via web browser</li>
+                        <li>Verify SMS service is running in services.msc</li>
+                        <li>Check Activity Monitor for connection status</li>
+                        <li>Test client deployment to sample endpoints</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section id="prerequisites" class="section">
+            <div class="section-header">
+                <h2>⚙️ Prerequisites & System Requirements</h2>
+                <p>Essential components and system requirements for successful installation</p>
+            </div>
+            <div class="section-content">
+                <div class="net-framework-details">
+                    <h3>📦 .NET Framework 4.8.1 - Critical Requirement</h3>
+                    <p>Safetica requires the latest .NET Framework 4.8.1 for optimal performance and security.</p>
+                    <div class="net-framework-grid">
+                        <div class="net-option">
+                            <h5>🌐 Runtime (Web Installer)</h5>
+                            <p>Downloads files during installation. Internet required.</p>
+                            <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer" class="download-link" target="_blank">Download Runtime<grok-card data-id="250d81" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="net-option">
+                            <h5>💾 Offline Installer</h5>
+                            <p>Complete package for systems without internet access.</p>
+                            <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-offline-installer" class="download-link" target="_blank">Download Offline<grok-card data-id="87a8ee" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="net-option">
+                            <h5>👨‍💻 Developer Pack</h5>
+                            <p>For development environments and Visual Studio integration.</p>
+                            <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-developer-pack-offline-installer" class="download-link" target="_blank">Download Dev Pack<grok-card data-id="18c33f" data-type="citation_card"></grok-card></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>🎯 System Requirements:</h4>
+                    <ul>
+                        <li><strong>OS:</strong> Windows Server 2016+ or Windows 10+ (64-bit)</li>
+                        <li><strong>RAM:</strong> Minimum 4GB, Recommended 8GB+ for production</li>
+                        <li><strong>Storage:</strong> 2GB free space for installation, 10GB+ for database</li>
+                        <li><strong>CPU:</strong> Multi-core processor recommended for 250+ endpoints</li>
+                        <li><strong>Network:</strong> TCP ports 4438 (default), 1433 (SQL), 80/443 (web console)</li>
+                        <li><strong>Permissions:</strong> Administrator rights for installation and service accounts</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>🗄️ SQL Server Requirements:</h4>
+                    <ul>
+                        <li><strong>Supported Versions:</strong> SQL Server 2012+ (Recommended: 2016+ with latest service packs)</li>
+                        <li><strong>Express Edition:</strong> Suitable for up to 250 endpoints (10GB database limit)</li>
+                        <li><strong>Standard/Enterprise:</strong> Required for larger deployments (500+ endpoints)</li>
+                        <li><strong>Permissions:</strong> SYSADMIN preferred, minimum DB_CREATOR + VIEW SERVER STATE</li>
+                        <li><strong>Network:</strong> TCP/IP and Named Pipes protocols must be enabled</li>
+                        <li><strong>Browser Service:</strong> SQL Browser service must be running for remote connections</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <h4>🔧 Pre-Installation Checklist:</h4>
+                    <ol>
+                        <li>✅ Windows Updates installed and system restarted</li>
+                        <li>✅ .NET Framework 4.8.1 installed and verified</li>
+                        <li>✅ SQL Server installed and accessible</li>
+                        <li>✅ Firewall configured for required ports</li>
+                        <li>✅ Antivirus exceptions added for Safetica folders</li>
+                        <li>✅ Administrator account available for installation</li>
+                        <li>✅ Network connectivity verified between SMS and SQL servers</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Monitor Section -->
         <section id="activity-monitor" class="section">
             <div class="section-header">
-                <h2>📊 Activity Monitor</h2>
-                <p>Essential tool for diagnosing SMS performance and status issues</p>
+                <h2>📊 Activity Monitor - Essential Diagnostic Tool</h2>
+                <p>Monitor SMS performance, diagnose issues, and understand system status</p>
             </div>
             <div class="section-content">
                 <div class="info-box">
-                    <strong>Launch Path:</strong> <code>C:\Program Files\Safetica Management Service\Tools\STActivityMonitor.exe</code>
-                </div>
-
-                <h3>Key Information Sections:</h3>
-                
-                <h4>Top Section - SMS Status:</h4>
-                <ul>
-                    <li><strong>Server runtime:</strong> Shows SMS uptime without stopping</li>
-                    <li><strong>Connections:</strong> Total/Opened/Waiting external connections (Clients + Console)</li>
-                    <li><strong>Queues:</strong> Current/Processed requests with timing data
-                        <ul>
-                            <li><strong>Request queue:</strong> External component requests</li>
-                            <li><strong>Saving queue:</strong> Logs waiting for database save</li>
-                            <li><strong>Categorization queue:</strong> Website/app validation requests</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h4>Bottom Section - Connection Details:</h4>
-                <ul>
-                    <li><strong>Type:</strong> Agent/Client/Console connection type</li>
-                    <li><strong>Computer:</strong> Source computer name</li>
-                    <li><strong>IP:</strong> Connection IP address</li>
-                    <li><strong>Runtime:</strong> Connection duration</li>
-                    <li><strong>Last read:</strong> Latest data exchange timestamp</li>
-                    <li><strong>Traffic:</strong> Download/upload data volume</li>
-                </ul>
-
-                <div class="warning-box">
-                    <strong>Server Configuration Tool:</strong> Available via Toolbar > Options > Server configuration. Directly modifies registry entries. Requires restart to take effect. Consult Safetica Support before major changes.
-                </div>
-
-                <h4>Common Configuration Entries:</h4>
-                <ul>
-                    <li><strong>ClientServicePort:</strong> Change default SMS port</li>
-                    <li><strong>DefinitionAutoUpdate:</strong> Toggle definition updates</li>
-                    <li><strong>IntegrationLevel:</strong> Set integration level (1000 = compatible)</li>
-                    <li><strong>MinimumUpdateFreeSpaceMB:</strong> Required space for SMS updates</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="installation" class="section">
-            <div class="section-header">
-                <h2>🔧 Installation & Setup Issues</h2>
-                <p>SQL configuration, prerequisites, and common installation problems</p>
-            </div>
-            <div class="section-content">
-                <div class="issue-card">
-                    <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">SQL Server Account Setup</span>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="issue-content">
-                        <div class="symptoms">
-                            <h4>Requirements for Automatic Setup:</h4>
-                            <ul>
-                                <li>SQL server located on same server as SMS</li>
-                                <li>User has sufficient Windows authentication permissions</li>
-                                <li>User can create/modify SQL accounts</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="reason">
-                            <h4>Manual Setup Required When:</h4>
-                            <ul>
-                                <li>Requirements above are not met</li>
-                                <li>SQL server is on separate machine</li>
-                                <li>Insufficient user permissions</li>
-                            </ul>
-                        </div>
-
-                        <div class="fix">
-                            <h4>Required SQL Permissions:</h4>
-                            <ul>
-                                <li><strong>Minimum (Not Recommended):</strong> DB_OWNER</li>
-                                <li><strong>Proper Functioning:</strong> DB_CREATOR + VIEW SERVER STATE</li>
-                                <li><strong>Best Experience:</strong> SYSADMIN</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <strong>Launch Activity Monitor:</strong><br>
+                    Path: <code>C:\Program Files\Safetica Management Service\Tools\STActivityMonitor.exe</code><br>
+                    Access: Any Management Console admin account<br>
+                    Purpose: Real-time SMS status monitoring and performance analysis
                 </div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Database Connection Setup</span>
+                        <span class="issue-title">📈 Top Section - SMS Status Overview</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
-                        <div class="info-box">
-                            <strong>Same Server:</strong> Information set automatically<br>
-                            <strong>Separate Servers:</strong> Manual configuration required
-                        </div>
-
                         <div class="fix">
-                            <h4>Manual Configuration Parameters:</h4>
+                            <h4>Key Metrics to Monitor:</h4>
                             <ul>
-                                <li><strong>IP or Address:</strong> Can be IP or server name
-                                    <br><code>Multiple instances: servername\INSTANCE</code></li>
-                                <li><strong>Username + Password:</strong> Account with sufficient permissions</li>
-                                <li><strong>Database Name Prefix:</strong> Safetica database naming policy</li>
+                                <li><strong>Server Runtime:</strong> Shows SMS uptime without service restarts
+                                    <br><em>Long runtime = stable service, frequent restarts = investigate issues</em></li>
+                                <li><strong>Total/Opened/Waiting Connections:</strong> External connector status
+                                    <br><em>Includes Safetica Clients (2 connections each) and Management Console</em></li>
+                                <li><strong>Request Queue:</strong> External component requests (settings updates, etc.)
+                                    <br><em>Format: Current/Processed requests; A=average time, L=last time</em></li>
+                                <li><strong>Saving Queue:</strong> Logs waiting for database save operation
+                                    <br><em>High numbers = database performance issues or disk space problems</em></li>
+                                <li><strong>Categorization Queue:</strong> Website/application validation requests
+                                    <br><em>Validated against local database and external categorization server</em></li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="issue-card">
-                    <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Common Installation Failures</span>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="issue-content">
-                        <div class="symptoms">
-                            <h4>Symptoms:</h4>
-                            <ul>
-                                <li>.NET version check errors (not necessarily missing .NET)</li>
-                                <li>Installation folder not empty errors</li>
-                                <li>Missing prerequisites errors</li>
-                            </ul>
-                        </div>
-
-                        <div class="fix">
-                            <h4>Resolution Steps:</h4>
-                            <ol>
-                                <li>Ensure system is up to date</li>
-                                <li>Install latest Microsoft .NET version</li>
-                                <li>Check installation folder: <code>C:\Program Files\Safetica Management Service</code></li>
-                                <li>If files exist, delete them and clean registry path:
-                                    <div class="code-block">Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service</div>
-                                </li>
-                                <li>Restart installation</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="general-issues" class="section">
-            <div class="section-header">
-                <h2>⚠️ General Issues</h2>
-                <p>Common operational problems and their solutions</p>
-            </div>
-            <div class="section-content">
-                <div class="issue-card">
-                    <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Insufficient Disk Space</span>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="issue-content">
-                        <div class="symptoms">
-                            <h4>Symptoms:</h4>
-                            <ul>
-                                <li>New logs don't appear in Safetica console</li>
-                                <li>Console loads slowly or not at all</li>
-                                <li>Error in service_lastrun.txt about allocating space for 'safetica.app_monitor_log'</li>
-                            </ul>
-                        </div>
-
-                        <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>Database filegroups ran out of space. Most common with SQL Express (10GB limit). Archiving tasks not configured properly.</p>
-                        </div>
-
-                        <div class="fix">
-                            <h4>Resolution Steps:</h4>
-                            <ol>
-                                <li>Redirect Safetica Clients:
-                                    <div class="code-block">STAservice.exe -clientport 44382</div>
-                                    Then restart SMS</li>
-                                <li>Shrink the database via SQL Management Studio</li>
-                                <li>Perform database maintenance:
-                                    <ul>
-                                        <li>Schedule archive and delete task, or</li>
-                                        <li>Manually delete entries (consult Safetica Support for queries)</li>
-                                    </ul>
-                                </li>
-                                <li>Redirect clients back:
-                                    <div class="code-block">STAservice.exe -clientport 4438</div>
-                                </li>
-                            </ol>
                         </div>
 
                         <div class="warning-box">
-                            <strong>Best Practices:</strong><br>
-                            • SQL Express: Set up regular maintenance (9 months production, trim 3 months, keep 6 months)<br>
-                            • 250+ Clients: Migrate to standard SQL Server
+                            <strong>⚠️ Warning Signs:</strong><br>
+                            • Saving queue constantly high (>1000)<br>
+                            • Request processing times increasing<br>
+                            • Frequent connection drops<br>
+                            • Short server runtime periods
                         </div>
                     </div>
                 </div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Logs Not Appearing in Real-Time</span>
+                        <span class="issue-title">🔌 Bottom Section - Connection Details</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
-                        <div class="symptoms">
-                            <h4>Symptoms:</h4>
+                        <div class="fix">
+                            <h4>Connection Information Analysis:</h4>
                             <ul>
-                                <li>Log processing takes excessive time</li>
-                                <li>Logs don't appear in real-time in Management Console</li>
+                                <li><strong>Type:</strong> Connection source identification
+                                    <br><em>Agent = Safetica Client, Console = Management interface</em></li>
+                                <li><strong>Computer:</strong> Source computer hostname
+                                    <br><em>Helps identify which endpoints are connected</em></li>
+                                <li><strong>IP Address:</strong> Network address of connecting system
+                                    <br><em>Useful for network troubleshooting and security audits</em></li>
+                                <li><strong>Runtime:</strong> Connection duration since establishment
+                                    <br><em>Long runtimes = stable connections, short = connectivity issues</em></li>
+                                <li><strong>Last Read:</strong> Timestamp of most recent data exchange
+                                    <br><em>Recent timestamps = active communication</em></li>
+                                <li><strong>Download/Upload:</strong> Data traffic volume since connection start
+                                    <br><em>High volumes may indicate data synchronization or log transmission</em></li>
                             </ul>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="reason">
-                            <h4>Potential Causes:</h4>
-                            <ul>
-                                <li>Database performance issues</li>
-                                <li>Insufficient hardware capabilities</li>
-                                <li>SMS resource constraints</li>
-                            </ul>
+                <div class="issue-card">
+                    <div class="issue-header" onclick="toggleIssue(this)">
+                        <span class="issue-title">⚙️ Server Configuration Tool</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="issue-content">
+                        <div class="warning-box">
+                            <strong>🚨 CAUTION:</strong> Advanced tool that directly modifies registry entries. Always consult Safetica Support before making major changes. Service restart required for changes to take effect.
                         </div>
 
                         <div class="fix">
-                            <h4>Troubleshooting:</h4>
-                            <ol>
-                                <li>Check Task Manager for resource utilization</li>
-                                <li>Verify SMS has sufficient resources</li>
-                                <li>Check database performance</li>
-                                <li>Consider hardware configuration upgrade</li>
-                                <li>Review recommended configurations at support.safetica.com</li>
-                            </ol>
+                            <h4>Access Path:</h4>
+                            <p>Activity Monitor → Toolbar → Options → Server Configuration</p>
+
+                            <h4>Common Configuration Entries:</h4>
+                            <ul>
+                                <li><strong>ClientServicePort:</strong> Change default SMS communication port (default: 4438)
+                                    <br><em>Useful for client redirection during maintenance</em></li>
+                                <li><strong>DefinitionAutoUpdate:</strong> Enable/disable automatic definition updates
+                                    <br><em>Control update behavior in restricted environments</em></li>
+                                <li><strong>IntegrationLevel:</strong> Set integration level without console
+                                    <br><em>1000 = compatible mode for troubleshooting</em></li>
+                                <li><strong>MinimumUpdateFreeSpaceMB:</strong> Required free space for SMS updates
+                                    <br><em>Adjust based on server storage capacity</em></li>
+                            </ul>
+
+                            <h4>Emergency Port Change Commands:</h4>
+                            <div class="code-block"># Redirect clients to alternative port
+STAservice.exe -clientport 44382
+
+# Restore to default port
+STAservice.exe -clientport 4438
+
+# Apply changes
+net stop "Safetica Management Service"
+net start "Safetica Management Service"</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="update-issues" class="section">
+        <!-- Installation Issues Section -->
+        <section id="installation-issues" class="section">
             <div class="section-header">
-                <h2>🔄 Update Issues</h2>
-                <p>Failed updates, service timeouts, and recovery procedures</p>
+                <h2>🔧 Installation Troubleshooting</h2>
+                <p>Resolve common installation problems, SQL configuration issues, and setup failures</p>
             </div>
             <div class="section-content">
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">STAService Did Not Stop in Time</span>
+                        <span class="issue-title">❌ Installation Fails - Missing Prerequisites</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
                             <h4>Symptoms:</h4>
                             <ul>
-                                <li>Update fails without apparent reason</li>
-                                <li>Progress stops on .NET version check</li>
-                                <li>Safetica Management Service stuck in "stopping" state</li>
+                                <li>.NET version check errors (installer performing background checks)</li>
+                                <li>Installation folder not empty errors</li>
+                                <li>Missing prerequisites warnings</li>
+                                <li>Installer exits unexpectedly without error message</li>
                             </ul>
                         </div>
 
                         <div class="reason">
                             <h4>Root Causes:</h4>
                             <ul>
-                                <li>Full queues (saving/request/categorization) couldn't process in time</li>
-                                <li>Hanging database transaction</li>
-                                <li>Insufficient hardware resources</li>
+                                <li>Missing or outdated .NET Framework 4.8.1</li>
+                                <li>Windows not fully updated</li>
+                                <li>Previous installation remnants in directory</li>
+                                <li>Insufficient user permissions</li>
+                                <li>Antivirus blocking installation files</li>
                             </ul>
                         </div>
 
                         <div class="fix">
-                            <h4>Resolution Methods:</h4>
-                            
-                            <h5>Method 1 - Simple Retry:</h5>
+                            <h4>Complete Resolution Steps:</h4>
                             <ol>
-                                <li>Wait for SMS to stop and restart</li>
-                                <li>Run update again immediately</li>
-                            </ol>
+                                <li><strong>Update System:</strong>
+                                    <ul>
+                                        <li>Install all Windows Updates</li>
+                                        <li>Restart system after updates</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Install .NET Framework 4.8.1:</strong>
+                                    <ul>
+                                        <li>Download from Microsoft: <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481" target="_blank">Official .NET 4.8.1<grok-card data-id="445517" data-type="citation_card"></grok-card></a></li>
+                                        <li>Use offline installer for systems without internet</li>
+                                        <li>Restart system after installation</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Clean Previous Installation:</strong>
+                                    <div class="code-block"># Check and clean installation folder
+dir "C:\Program Files\Safetica Management Service"
+# If files exist, delete the folder contents
+rmdir /s "C:\Program Files\Safetica Management Service"
 
-                            <h5>Method 2 - Temporary Client Redirect (SMS):</h5>
-                            <ol>
-                                <li>Wait for service restart</li>
-                                <li>Change SMS port via command line or Activity Monitor</li>
-                                <li>Restart SMS and run update</li>
-                                <li>Restore default port after update completion</li>
+# Clean registry entries
+regedit
+# Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service
+# Delete the entire key if present</div>
+                                </li>
+                                <li><strong>Run Installation:</strong>
+                                    <ul>
+                                        <li>Right-click safetica_setup.exe → "Run as Administrator"</li>
+                                        <li>Temporarily disable antivirus real-time protection</li>
+                                        <li>Choose appropriate installation type</li>
+                                    </ul>
+                                </li>
                             </ol>
+                        </div>
 
-                            <h5>Method 3 - Firewall Block:</h5>
+                        <div class="success-box">
+                            <strong>Prevention for Future Installations:</strong><br>
+                            • Add antivirus exceptions for Safetica folders<br>
+                            • Add regular system updates<br>
+                            • Keep .NET Framework current
+                        </div>
+                    </div>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-header" onclick="toggleIssue(this)">
+                        <span class="issue-title">🗄️ SQL Server Account Configuration</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="issue-content">
+                        <div class="symptoms">
+                            <h4>Automatic Setup Requirements:</h4>
+                            <ul>
+                                <li>SQL Server located on same machine as SMS</li>
+                                <li>Current user has Windows authentication to SQL</li>
+                                <li>User can create/modify SQL Server accounts</li>
+                                <li>User has sufficient administrative permissions</li>
+                            </ul>
+                        </div>
+
+                        <div class="reason">
+                            <h4>When Manual Setup Required:</h4>
+                            <ul>
+                                <li>SQL Server on separate/remote machine</li>
+                                <li>Insufficient Windows authentication permissions</li>
+                                <li>Corporate security policies restrict account creation</li>
+                                <li>Using existing SQL Server instance with restrictions</li>
+                            </ul>
+                        </div>
+
+                        <div class="fix">
+                            <h4>Manual SQL Account Creation:</h4>
                             <ol>
-                                <li>Block incoming connections on port 4438</li>
-                                <li>Run update</li>
-                                <li>Remove firewall block</li>
+                                <li><strong>Create SQL Server Login:</strong>
+                                    <div class="code-block">-- Connect to SQL Server Management Studio
+-- Navigate to Security > Logins > New Login
+
+-- SQL Authentication setup:
+CREATE LOGIN safetica WITH PASSWORD = 'YourStrongPassword123!';
+
+-- Windows Authentication (if domain environment):
+CREATE LOGIN [DOMAIN\SafeticaService] FROM WINDOWS;</div>
+                                </li>
+                                <li><strong>Assign Required Permissions:</strong>
+                                    <div class="code-block">-- Best Practice (SYSADMIN):
+ALTER SERVER ROLE sysadmin ADD MEMBER safetica;
+
+-- Minimum Required (Production):
+ALTER SERVER ROLE dbcreator ADD MEMBER safetica;
+GRANT VIEW SERVER STATE TO safetica;
+
+-- Emergency Minimum (Not Recommended):
+-- Create database first, then assign db_owner</div>
+                                </li>
+                                <li><strong>Configure SMS Database Connection:</strong>
+                                    <ul>
+                                        <li><strong>Same Server:</strong> <code>localhost</code> or <code>.</code></li>
+                                        <li><strong>Named Instance:</strong> <code>servername\INSTANCENAME</code></li>
+                                        <li><strong>Remote Server:</strong> <code>192.168.1.100</code> or <code>sqlserver.domain.com</code></li>
+                                        <li><strong>Custom Port:</strong> <code>servername,1433</code></li>
+                                    </ul>
+                                </li>
                             </ol>
                         </div>
 
                         <div class="info-box">
-                            <strong>Note:</strong> Queue-related issues should not occur in version 9.9.28 and newer.
+                            <strong>Database Name Prefix Options:</strong><br>
+                            • Default: <code>safetica</code> (creates safetica_data, safetica_log)<br>
+                            • Custom: <code>company_safetica</code> (for multiple instances)<br>
+                            • Clean Install: Change prefix to create fresh database
                         </div>
                     </div>
                 </div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Update Failed - SMS Won't Start</span>
+                        <span class="issue-title">🌐 Network Connection Issues</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
-                            <h4>Symptoms:</h4>
+                            <h4>Common Network Problems:</h4>
                             <ul>
-                                <li>Update failed with standard error screen</li>
-                                <li>Management Console remains unusable</li>
-                                <li>SMS folder missing files</li>
+                                <li>Cannot connect to remote SQL Server during installation</li>
+                                <li>"Network path not found" errors</li>
+                                <li>"Login failed for user" messages</li>
+                                <li>Timeout errors during database connection test</li>
                             </ul>
                         </div>
 
-                        <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>Installation/update process terminated before completion, often by security software, preventing rollback.</p>
-                        </div>
-
                         <div class="fix">
-                            <h4>Complete Reinstallation Process:</h4>
-                            <ol>
-                                <li>Navigate to <code>C:\Program Files</code></li>
-                                <li>Rename "Safetica Management Service" folder</li>
-                                <li>Download installer for same SMS version</li>
-                                <li>Check current version in registry:
-                                    <div class="code-block">Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service</div>
-                                </li>
-                                <li>Run manual installation with pre-filled settings</li>
-                                <li><strong>Optional:</strong> Copy cert.pem and key.pem from original folder</li>
-                            </ol>
+                            <h4>Network Configuration Checklist:</h4>
+                            
+                            <h5>1. SQL Server Browser Service:</h5>
+                            <ul>
+                                <li>Open SQL Server Configuration Manager</li>
+                                <li>Navigate to SQL Server Services</li>
+                                <li>Ensure "SQL Server Browser" is running</li>
+                                <li>Set startup type to "Automatic"</li>
+                            </ul>
+
+                            <h5>2. Network Protocols:</h5>
+                            <ul>
+                                <li>SQL Server Configuration Manager → SQL Server Network Configuration</li>
+                                <li>Select "Protocols for [INSTANCENAME]"</li>
+                                <li>Enable "Named Pipes" protocol</li>
+                                <li>Enable "TCP/IP" protocol</li>
+                                <li>Check TCP/IP properties for port configuration</li>
+                            </ul>
+
+                            <h5>3. Firewall Configuration:</h5>
+                            <div class="code-block"># Windows Firewall rules for SQL Server
+# Default SQL port
+netsh advfirewall firewall add rule name="SQL Server" dir=in action=allow protocol=TCP localport=1433
+
+# SQL Browser service
+netsh advfirewall firewall add rule name="SQL Browser" dir=in action=allow protocol=UDP localport=1434
+
+# Verify current SQL port configuration
+netstat -an | findstr :1433</div>
+
+                            <h5>4. Connection Testing:</h5>
+                            <div class="code-block"># Test SQL connectivity from SMS server
+telnet sqlserver 1433
+Test-NetConnection sqlserver -Port 1433</div>
                         </div>
 
                         <div class="warning-box">
-                            <strong>Prevention:</strong> Add security software exceptions for:
-                            <ul>
-                                <li><code>C:\Program Files\Safetica Management Service</code></li>
-                                <li><code>C:\ProgramData\Safetica Management Service</code></li>
-                                <li><code>C:\ProgramData\STEventService</code></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="issue-card">
-                    <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Database Conversion Cannot Finish</span>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="issue-content">
-                        <div class="symptoms">
-                            <h4>Symptoms:</h4>
-                            <ul>
-                                <li>Update doesn't finish after extended time</li>
-                                <li>All services running normally</li>
-                                <li>Console shows "database conversion is running" message</li>
-                                <li>Disk space or filegroup errors in SQL logs</li>
-                            </ul>
-                        </div>
-
-                        <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>Database conversion stuck in loop due to insufficient space, especially with SQL Express 10GB limit or large transaction log.</p>
-                        </div>
-
-                        <div class="fix">
-                            <h4>Resolution:</h4>
-                            <p>Requires manual database intervention. See <strong>Database Issues</strong> section for detailed procedures.</p>
+                            <strong>Dynamic Ports:</strong> If TCP Dynamic Ports = 0, it means dynamic ports are enabled. If there are other settings stated, it has to be taken into consideration when setting Database Connection in Safetica Management Console - Profile.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="database-issues" class="section">
+        <!-- General Issues Section -->
+        <section id="general-issues" class="section">
             <div class="section-header">
-                <h2>🗄️ Database Issues</h2>
-                <p>Connection problems, full databases, and maintenance procedures</p>
+                <h2>⚠️ General Troubleshooting</h2>
+                <p>Common operational problems and performance issues</p>
             </div>
             <div class="section-content">
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Cannot Initiate Database Connection</span>
+                        <span class="issue-title">💾 Insufficient Disk Space - Critical Issue</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
                             <h4>Symptoms:</h4>
                             <ul>
-                                <li>Cannot connect to Management Console</li>
-                                <li>SMS restarts repeatedly</li>
-                                <li>Startup fails at "middleware initialization"</li>
+                                <li>New logs stop appearing in Management Console</li>
+                                <li>Console loads extremely slowly or times out</li>
+                                <li>Error in service_lastrun.txt: "Could not allocate space for object"</li>
+                                <li>Database error mentioning filegroup is full</li>
+                                <li>SQL Express 10GB limitation reached</li>
                             </ul>
                         </div>
 
                         <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>Database connection cannot be established during SMS startup process.</p>
+                            <h4>Root Causes:</h4>
+                            <ul>
+                                <li>SQL Express database reached 10GB limit</li>
+                                <li>Insufficient disk space on database server</li>
+                                <li>Archiving tasks not configured properly</li>
+                                <li>Log retention policies too aggressive</li>
+                                <li>Large file operations generating excessive logs</li>
+                            </ul>
                         </div>
 
                         <div class="fix">
-                            <h4>Troubleshooting Steps:</h4>
+                            <h4>Immediate Resolution Steps:</h4>
                             <ol>
-                                <li>Check debuglog.txt in <code>C:\programdata\Safetica Management Service\</code></li>
-                                <li>Install SQL Management Studio</li>
-                                <li>Examine SQL and Safetica logs</li>
-                                <li>Verify database status and accessibility</li>
+                                <li><strong>Emergency Client Redirection:</strong>
+                                    <div class="code-block"># Navigate to SMS installation folder
+cd "C:\Program Files\Safetica Management Service"
+
+# Redirect clients to alternative port
+STAservice.exe -clientport 44382
+
+# Restart SMS service
+net stop "Safetica Management Service"
+net start "Safetica Management Service"</div>
+                                </li>
+                                
+                                <li><strong>Database Maintenance:</strong>
+                                    <ul>
+                                        <li>Open SQL Server Management Studio</li>
+                                        <li>Right-click database → Tasks → Shrink → Database</li>
+                                        <li>Wait for shrink operation to complete</li>
+                                    </ul>
+                                </li>
+
+                                <li><strong>Archive and Clean Data:</strong>
+                                    <ul>
+                                        <li><strong>Option A:</strong> Schedule archive and delete task in console</li>
+                                        <li><strong>Option B:</strong> Manual cleanup via SQL queries (contact Safetica Support)</li>
+                                        <li>Target: Keep 6-9 months of recent data</li>
+                                    </ul>
+                                </li>
+
+                                <li><strong>Restore Normal Operations:</strong>
+                                    <div class="code-block"># Restore default client port
+STAservice.exe -clientport 4438
+
+# Restart SMS service
+net stop "Safetica Management Service"
+net start "Safetica Management Service"</div>
+                                </li>
                             </ol>
+                        </div>
+
+                        <div class="success-box">
+                            <strong>Best Practices for Prevention:</strong><br>
+                            • SQL Express: Schedule quarterly archiving (9 months → 6 months)<br>
+                            • 250+ Endpoints: Upgrade to SQL Server Standard<br>
+                            • Monitor: Set up disk space alerts at 80% capacity<br>
+                            • Automate: Configure automatic archiving tasks
                         </div>
                     </div>
                 </div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Database is Busy</span>
+                        <span class="issue-title">⏱️ Logs Not Appearing in Real-Time</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
-                            <h4>Symptoms:</h4>
+                            <h4>Performance Indicators:</h4>
                             <ul>
-                                <li>Service not responding</li>
-                                <li>Unable to connect to console</li>
-                                <li>Error message: "Busy (SavingQueue.cpp [58])" in service_lastrun.txt</li>
+                                <li>Log processing takes excessive time (>5 minutes)</li>
+                                <li>Management Console shows outdated information</li>
+                                <li>Activity Monitor shows high queue numbers</li>
+                                <li>Reports missing recent activity</li>
+                                <li>Dashboard metrics appear delayed</li>
                             </ul>
                         </div>
 
                         <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>SMS or SQL server cannot handle tasks in real-time. Tasks are piling up waiting to be processed.</p>
+                            <h4>Performance Bottlenecks:</h4>
+                            <ul>
+                                <li>Insufficient server memory (RAM)</li>
+                                <li>High CPU utilization on SMS server</li>
+                                <li>Database server performance issues</li>
+                                <li>Network latency between SMS and SQL</li>
+                                <li>Disk I/O bottlenecks on database storage</li>
+                                <li>Too many concurrent client connections</li>
+                            </ul>
                         </div>
 
                         <div class="fix">
-                            <h4>Verification & Resolution:</h4>
-                            <ol>
-                                <li>Check Activity Monitor for queue status and unprocessed records</li>
-                                <li>Wait for tasks to process (may experience prolonged loading)</li>
-                                <li>Consider hardware resource adjustment</li>
-                            </ol>
+                            <h4>Diagnostic and Resolution:</h4>
+                            
+                            <h5>1. Performance Monitoring:</h5>
+                            <div class="code-block"># Check SMS service resource usage
+tasklist /fi "imagename eq STAservice.exe" /fo table /v
+
+# Monitor system performance
+perfmon.exe
+# Add counters: Processor Time, Available Memory, Disk Queue Length
+
+# SQL Server performance
+# Open SQL Server Management Studio → Activity Monitor</div>
+
+                            <h5>2. Activity Monitor Analysis:</h5>
+                            <ul>
+                                <li>Check queue status (Saving, Request, Categorization)</li>
+                                <li>Monitor connection count and stability</li>
+                                <li>Review average processing times</li>
+                                <li>Identify bottleneck queues</li>
+                            </ul>
+
+                            <h5>3. Hardware Optimization:</h5>
+                            <ul>
+                                <li><strong>Memory:</strong> Increase RAM if consistently >80% usage</li>
+                                <li><strong>CPU:</strong> Consider multi-core upgrade for high load</li>
+                                <li><strong>Storage:</strong> Move database to SSD storage</li>
+                                <li><strong>Network:</strong> Ensure gigabit connectivity</li>
+                            </ul>
+
+                            <h5>4. Configuration Tuning:</h5>
+                            <div class="code-block"># SQL Server optimization
+# Increase memory allocation for SQL Server
+# Configure maximum server memory in SQL properties
+
+# SMS optimization via Activity Monitor
+# Toolbar → Options → Server configuration
+# Adjust processing threads if available</div>
                         </div>
 
                         <div class="info-box">
-                            <strong>Version 9.9.25+ Improvement:</strong> Console requests handled with higher priority, login should work even under high load.
+                            <strong>Recommended Hardware (Production):</strong><br>
+                            • Small (1-250 endpoints): 4GB RAM, 2-core CPU<br>
+                            • Medium (250-500 endpoints): 8GB RAM, 4-core CPU<br>
+                            • Large (500+ endpoints): 16GB+ RAM, 8-core CPU, dedicated SQL server
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- Update Issues Section -->
+        <section id="update-issues" class="section">
+            <div class="section-header">
+                <h2>🔄 Update Troubleshooting</h2>
+                <p>Resolve failed updates, timeouts, and recovery procedures</p>
+            </div>
+            <div class="section-content">
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Database in Read-Only Mode</span>
+                        <span class="issue-title">🔄 STAService Did Not Stop in Time</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
                             <h4>Symptoms:</h4>
                             <ul>
-                                <li>Cannot connect to console</li>
-                                <li>New logs are not saved</li>
-                                <li>Error containing "read-only" string in service_lastrun.txt</li>
+                                <li>The update seems to start normally, but after a while, you receive a general notification that it failed.</li>
+                                <li>When updating from the update package, progress stops on checking the .NET version. Afterwards, the update fails. This is not due to missing .NET but due to the STAService process still running.</li>
+                                <li>In services.msc, Safetica Management Service is in the stopping state, even after the notification about failed update is displayed.</li>
                             </ul>
                         </div>
-
                         <div class="reason">
-                            <h4>Root Cause:</h4>
-                            <p>Filegroups switched to single-user or read-only state after unexpected SQL termination, failed update, or specific SQL issues.</p>
+                            <h4>Reason:</h4>
+                            <p>The most common reason for this is that saving/request/categorization queues were full and could not be processed in time (see the Activity Monitor chapter for reference). This might happen in older versions of Safetica, but should not happen in version 9.9.31 and newer. Another culprit might be a hanging transaction on the database which prohibits the SMS from stopping. This might be happening due to insufficient hardware either on the side of the database or SMS and is mainly present in large environments.</p>
                         </div>
-
                         <div class="fix">
-                            <h4>Resolution Query:</h4>
-                            <div class="code-block">ALTER DATABASE safetica_data SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-ALTER DATABASE safetica_data MODIFY FILEGROUP safetica_data_fg READWRITE;
-ALTER DATABASE safetica_data SET MULTI_USER</div>
-                            <div class="warning-box">
-                                <strong>Note:</strong> Adjust database prefix if different from default "safetica_data"
+                            <h4>Fix:</h4>
+                            <ul>
+                                <li>Right after the SMS finally stops and restarts, run the update again. After restart, it should go through without any issue.</li>
+                                <li>Temporarily redirect Safetica Clients
+                                    <ul>
+                                        <li>Using the SMS:
+                                            <ul>
+                                                <li>Wait for the service to restart.</li>
+                                                <li>Change SMS port either via command line or Activity Monitor.</li>
+                                                <li>Restart SMS again and run the update.</li>
+                                                <li>After the update is fully finished, change the port back to default and restart SMS again.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Using the firewall:
+                                            <ul>
+                                                <li>Just set up a blocking policy for incoming connections on port 4438.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Restart the update</li>
+                            </ul>
+                            <p>The issues caused by full queues should not be present in version 9.9.28 and newer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-header" onclick="toggleIssue(this)">
+                        <span class="issue-title">🔄 Update Failed and SMS Does Not Start</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="issue-content">
+                        <div class="symptoms">
+                            <h4>Symptoms:</h4>
+                            <ul>
+                                <li>Update has failed with the standard error screen in Safetica Management Console.</li>
+                                <li>After that, Safetica Management Console remains unusable without SMS connecting back.</li>
+                                <li>Safetica Management Service folder does not contain all the files.</li>
+                            </ul>
+                        </div>
+                        <div class="reason">
+                            <h4>Issue Source:</h4>
+                            <p>This issue occurs most commonly when the installation/update process is terminated while it had not finished. Installation is usually terminated by another security software, which kills the process, and therefore, prohibits rollback to the original version.</p>
+                        </div>
+                        <div class="fix">
+                            <h4>Fix:</h4>
+                            <ul>
+                                <li>Repairing this situation is fairly easy but includes a complete reinstall of SMS. This will, however, leave the collected data intact, so there is no risk in doing so.</li>
+                                <li>Navigate to C:\Program Files and rename the folder Safetica Management Service to anything else.</li>
+                                <li>Download the installer of the same SMS version and run a manual installation of SMS (if you are not sure which version you are currently running, verify it in the registry entry: Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service).</li>
+                                <li>Leave the pre-filled settings within the installer and run the installation.</li>
+                                <li>(optional) From the original folder, copy files cert.pem and key.pem and paste them into the newly created folder for Safetica Management Service</li>
+                                <li>Now you can log back in</li>
+                            </ul>
+                            <div class="note">
+                                <p>Note: To mitigate this issue in the future, we recommend setting exceptions for Safetica Management Service folders in any 3rd party security software:</p>
+                                <ul>
+                                    <li>C:\Program Files\Safetica Management Service</li>
+                                    <li>C:\ProgramData\Safetica Management Service</li>
+                                    <li>C:\ProgramData\STEventService</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -849,257 +1279,449 @@ ALTER DATABASE safetica_data SET MULTI_USER</div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Database is Full - Comprehensive Guide</span>
+                        <span class="issue-title">🔄 Database Conversion is Not Able to Finish</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
-                            <h4>Common Scenarios:</h4>
+                            <h4>Symptoms:</h4>
                             <ul>
-                                <li><strong>Normal Usage:</strong> Database filled with logs, console accessible</li>
-                                <li><strong>Failed Update:</strong> Database full during update, console available</li>
-                                <li><strong>Ongoing Update:</strong> Database full during update, console unavailable</li>
+                                <li>The update does not finish even after a long time.</li>
+                                <li>All services seem to be running normally.</li>
+                                <li>After you restart Safetica Management Console, you will see a message that database conversion is running.</li>
+                                <li>You can also see an error message about insufficient disk space or full filegroup in SQL logs or Service_lastrun.txt</li>
                             </ul>
                         </div>
-
+                        <div class="reason">
+                            <h4>Issue Source:</h4>
+                            <p>Database conversion is stuck in a loop and the query cannot be performed correctly. The most common reason for this behavior is insufficient space in the database, mainly with SQL Server Express which is limited to 10GB. In some cases, the database runs out of disk space due to a large transaction log.</p>
+                        </div>
                         <div class="fix">
-                            <h4>Scenario-Based Solutions:</h4>
-
-                            <h5>1. Normal Usage (Console Accessible):</h5>
-                            <ul>
-                                <li>Automatic backup and overwrite enabled</li>
-                                <li>Run normal archivation tasks</li>
-                                <li>Create backup and delete task to clean up space</li>
-                            </ul>
-
-                            <h5>2. Failed Update (Console Available):</h5>
-                            <ul>
-                                <li>Access console and run archivation tasks</li>
-                                <li>Wait for completion before retrying update</li>
-                            </ul>
-
-                            <h5>3. Ongoing Update (Console Unavailable):</h5>
-                            <p>Most complex scenario requiring manual intervention:</p>
-                            
-                            <h6>Manual Database Cleanup Process:</h6>
-                            <ol>
-                                <li><strong>Generate Disk Usage Report:</strong>
-                                    <ul>
-                                        <li>Open SQL Management Studio</li>
-                                        <li>Right-click database → Reports → Standard Reports → "Disk usage by top tables"</li>
-                                        <li>Export list and send to Safetica Support for cleanup queries</li>
-                                    </ul>
-                                </li>
-                                
-                                <li><strong>Stop Services:</strong>
-                                    <div class="code-block">cd "C:\Program Files\Safetica Management Service"
-ren STAService.exe aSTAservice.exe
-taskkill /f /im staservice.exe</div>
-                                </li>
-
-                                <li><strong>Shrink Database:</strong>
-                                    <ul>
-                                        <li>SQL Management Studio → Right-click database → Shrink → Database</li>
-                                        <li>Wait for completion</li>
-                                    </ul>
-                                </li>
-
-                                <li><strong>Execute Cleanup Query:</strong>
-                                    <ul>
-                                        <li>Modify query from Safetica Support</li>
-                                        <li>Adjust dates (Format: YYYYMMDDHHMMSS)</li>
-                                        <li>Example for 6 months: 20201101000000</li>
-                                        <li>Targets primarily file_operation_log table</li>
-                                    </ul>
-                                </li>
-
-                                <li><strong>Post-Cleanup Steps:</strong>
-                                    <ol>
-                                        <li>Shrink database again (optional)</li>
-                                        <li>Rebuild columnstore index:
-                                            <ul>
-                                                <li>Navigate to database → Tables → file_operation_log → Indexes</li>
-                                                <li>Find columnstore index → Right-click → Rebuild</li>
-                                            </ul>
-                                        </li>
-                                        <li>Final database shrink</li>
-                                        <li>Restore service:
-                                            <div class="code-block">ren aSTAservice.exe STAservice.exe
-restart.bat</div>
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ol>
-                        </div>
-
-                        <div class="warning-box">
-                            <strong>Transaction Log Issues:</strong><br>
-                            • Keep database size reasonable (6 months recommended)<br>
-                            • Ensure sufficient disk space<br>
-                            • Consider separate disk for transaction log<br>
-                            • Set recovery model to "Simple" for auto log cleanup
+                            <h4>Fix:</h4>
+                            <p>This issue does not have a simple solution and requires manual intervention on the database.</p>
+                            <p>First, open SQL Management Studio and login into the database. Right-click on the database name "Reports - standard reports - Disk usage by top tables". Export the list and send it to Safetica support with a request for database cleanup querys.</p>
+                            <p>Navigate to C:\Program Files\Safetica Management Service and rename STAService.exe to "aSTAservice.exe"</p>
+                            <p>open CMD as administrator and run command "taskkill /f /im staservice.exe"</p>
+                            <p>Open SQL Management Studio and log in</p>
+                            <p>Right-click on the database - shrink - database and wait for it to finish</p>
+                            <p>Now you will have to decide how old data you want to keep/delete. Modify the query you received from Safetica support. You will need to change the dates at the end of the lines. The format is YYYYMMDDHHMMSS so if you want to keep 6 months of data the data should be 20201101000000. At this moment this concerns only file operation logs</p>
+                            <p>Run the query (right-click on the database)</p>
+                            <p>After the query finishes, you should see the number of affected rows</p>
+                            <p>Shrink the database again (optional)</p>
+                            <p>Now you will have to rebuild columnstore index. When you click on the + then tables and find table file_operation_log. Click on + and indexes. The first index should include columnstore in the name. Right-click on it and select rebuild.</p>
+                            <p>After it finishes shrink the database again which should release enough of the space for the update.</p>
+                            <p>Rename "aSTAservice.exe" back to the "STAservice.exe" and run restart.bat in the same location</p>
+                            <p>Wait for the update to finish.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sql-setup" class="section">
+        <!-- Database Issues Section -->
+        <section id="database-issues" class="section">
             <div class="section-header">
-                <h2>💾 SQL Server Setup & Configuration</h2>
-                <p>Installation options, network configuration, and supported versions</p>
+                <h2>🗄️ Database Issues & Maintenance</h2>
+                <p>Connection problems, full databases, and advanced maintenance procedures</p>
             </div>
             <div class="section-content">
-                <div class="info-box">
-                    <strong>Supported Versions:</strong><br>
-                    • Minimum: MS SQL 2012+<br>
-                    • Recommended: MS SQL 2016+ (with latest service packs)<br>
-                    • Migration: Always use latest build to avoid clustered columnstore index issues
-                </div>
-
-                <h3>Installation Methods:</h3>
-
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Automatic Installation</span>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="issue-content">
-                        <div class="fix">
-                            <h4>Features:</h4>
-                            <ul>
-                                <li>All configuration done automatically</li>
-                                <li>Service account "Safetica" created with SYSADMIN permissions</li>
-                                <li>Default password: <code>S@fetic@2004</code></li>
-                                <li>Pre-defined SMS database connection</li>
-                                <li>Default instance: <code>SERVERNAME\SAFETICA</code></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="issue-card">
-                    <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Manual Installation from Safetica Package</span>
+                        <span class="issue-title">🚫 Cannot Connect to Management Console</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
-                            <h4>Limitations vs Official SQL Installer:</h4>
+                            <h4>Connection Failure Symptoms:</h4>
                             <ul>
-                                <li>Install directory cannot be selected</li>
-                                <li>"sa" account cannot be configured</li>
-                                <li>Cannot specify which services to install</li>
-                                <li>Only instance name can be changed</li>
+                                <li>Web browser shows "Connection refused" or timeout</li>
+                                <li>SMS service repeatedly restarts in services.msc</li>
+                                <li>Debuglog.txt shows "middleware initialization" failure</li>
+                                <li>Service_lastrun.txt contains database connection errors</li>
+                            </ul>
+                        </div>
+
+                        <div class="reason">
+                            <h4>Database Connection Issues:</h4>
+                            <ul>
+                                <li>SQL Server service stopped or crashed</li>
+                                <li>Network connectivity lost between SMS and SQL</li>
+                                <li>Database credentials changed or expired</li>
+                                <li>Database in single-user or restricted mode</li>
+                                <li>Firewall blocking database connections</li>
                             </ul>
                         </div>
 
                         <div class="fix">
-                            <h4>When to Use:</h4>
-                            <p>Launched via "New installation of SQL Server Express" during SMS installation. For more control, download official SQL installer from Microsoft.</p>
+                            <h4>Systematic Troubleshooting:</h4>
+
+                            <h5>1. Verify SQL Server Status:</h5>
+                            <div class="code-block"># Check SQL Server service
+services.msc
+# Look for "SQL Server (INSTANCENAME)" - should be "Running"
+
+# Command line verification
+sc query MSSQLSERVER
+sc query "MSSQL$SAFETICA"
+
+# Test SQL connectivity
+sqlcmd -S servername\instancename -E
+# Or with SQL authentication:
+sqlcmd -S servername\instancename -U username -P password</div>
+
+                            <h5>2. Review SMS Logs:</h5>
+                            <ul>
+                                <li><strong>Debug Log:</strong> <code>C:\ProgramData\Safetica Management Service\debuglog.txt</code></li>
+                                <li><strong>Service Log:</strong> <code>C:\ProgramData\Safetica Management Service\logs\service_lastrun.txt</code></li>
+                                <li>Look for specific error messages about database connections</li>
+                            </ul>
+
+                            <h5>3. Database Status Verification:</h5>
+                            <div class="code-block">-- Connect via SQL Management Studio
+-- Check database status
+SELECT name, state_desc, user_access_desc 
+FROM sys.databases 
+WHERE name LIKE 'safetica%';
+
+-- Verify filegroup status
+SELECT name, state_desc 
+FROM sys.filegroups 
+WHERE data_space_id IN (
+    SELECT data_space_id FROM sys.database_files
+);</div>
+
+                            <h5>4. Network Connectivity Test:</h5>
+                            <div class="code-block"># Test network connection to SQL server
+telnet sqlservername 1433
+
+# Test DNS resolution
+nslookup sqlservername
+
+# Ping test
+ping sqlservername
+
+# Port connectivity check
+Test-NetConnection sqlservername -Port 1433</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="issue-card">
                     <div class="issue-header" onclick="toggleIssue(this)">
-                        <span class="issue-title">Network Configuration Issues</span>
+                        <span class="issue-title">⚡ Database Performance Issues</span>
                         <span class="toggle-icon">▼</span>
                     </div>
                     <div class="issue-content">
                         <div class="symptoms">
-                            <h4>When Using Existing SQL Server:</h4>
-                            <p>Prerequisites that may need manual configuration:</p>
+                            <h4>Performance Indicators:</h4>
+                            <ul>
+                                <li>Service_lastrun.txt shows "Busy (SavingQueue.cpp [58])" errors</li>
+                                <li>Activity Monitor displays high queue numbers</li>
+                                <li>Console login takes excessive time</li>
+                                <li>Reports generation times out</li>
+                                <li>Real-time monitoring lags significantly</li>
+                            </ul>
+                        </div>
+
+                        <div class="reason">
+                            <h4>Performance Bottlenecks:</h4>
+                            <ul>
+                                <li>Database server overwhelmed with requests</li>
+                                <li>Insufficient memory allocation to SQL Server</li>
+                                <li>High disk I/O on database storage</li>
+                                <li>Missing or fragmented database indexes</li>
+                                <li>Transaction log growth issues</li>
+                                <li>Concurrent user load exceeding capacity</li>
+                            </ul>
                         </div>
 
                         <div class="fix">
-                            <h4>Required Services & Protocols:</h4>
-                            
-                            <h5>1. SQL Browser Service:</h5>
-                            <ul>
-                                <li>Responsible for delegating incoming connections</li>
-                                <li>Verify via SQL Server Configuration Manager</li>
-                                <li>Must be running for remote connections</li>
-                            </ul>
+                            <h4>Performance Optimization:</h4>
 
-                            <h5>2. Network Protocols:</h5>
+                            <h5>1. SQL Server Performance Monitoring:</h5>
+                            <div class="code-block">-- Check current connections and processes
+SELECT 
+    session_id, 
+    status, 
+    command, 
+    cpu_time, 
+    memory_usage,
+    reads, 
+    writes,
+    logical_reads
+FROM sys.dm_exec_requests
+WHERE session_id > 50;
+
+-- Monitor wait statistics
+SELECT TOP 10 
+    wait_type, 
+    wait_time_ms, 
+    percentage = wait_time_ms * 100.0 / SUM(wait_time_ms) OVER()
+FROM sys.dm_os_wait_stats 
+WHERE wait_time_ms > 0
+ORDER BY wait_time_ms DESC;</div>
+
+                            <h5>2. Database Maintenance:</h5>
+                            <div class="code-block">-- Update database statistics
+UPDATE STATISTICS safetica_data;
+
+-- Rebuild fragmented indexes
+ALTER INDEX ALL ON safetica_data.dbo.file_operation_log REBUILD;
+
+-- Check database integrity
+DBCC CHECKDB('safetica_data') WITH NO_INFOMSGS;</div>
+
+                            <h5>3. SQL Server Configuration:</h5>
                             <ul>
-                                <li>Enable Named Pipes and TCP/IP protocols</li>
-                                <li>Location: SQL Server Configuration Manager → SQL Server Network Configuration → Protocols for "INSTANCENAME"</li>
-                                <li>TCP Dynamic Ports = 0 means dynamic ports enabled</li>
-                                <li>Note IP addresses and port settings for SMS configuration</li>
+                                <li><strong>Memory:</strong> Set max server memory to 75% of total RAM</li>
+                                <li><strong>Recovery Model:</strong> Set to SIMPLE for better performance</li>
+                                <li><strong>Auto-Growth:</strong> Configure reasonable auto-growth settings</li>
+                                <li><strong>Tempdb:</strong> Place on separate fast storage if possible</li>
                             </ul>
                         </div>
 
-                        <div class="warning-box">
-                            <strong>Important:</strong> Document IP addresses and port configurations for Database Connection setup in Safetica Management Console Profile.
+                        <div class="info-box">
+                            <strong>Version 9.9.25+ Improvement:</strong> Console requests prioritized during high load. Login should work even when database is busy, but root cause still needs addressing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-header" onclick="toggleIssue(this)">
+                        <span class="issue-title">🔒 Database is in Read-Only Mode</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="issue-content">
+                        <div class="symptoms">
+                            <h4>Symptoms:</h4>
+                            <ul>
+                                <li>Cannot connect to console </li>
+                                <li>New logs are not saved </li>
+                                <li>In service_lastrun.txt you will find an error that includes string read-only (you can search for it within the log)</li>
+                            </ul>
+                        </div>
+                        <div class="reason">
+                            <h4>Issue Source:</h4>
+                            <p>In some cases, when SQL server was terminated unexpectedly, after a failed update or in some specific situations within the SQL server, it might happen that some of the filegroups will be switched to single-user or read-only state. In such a situation, the service will not work correctly and you might encounter an issue when connecting to the Safetica Management Console. </p>
+                        </div>
+                        <div class="fix">
+                            <h4>Fix:</h4>
+                            <div class="code-block">
+ALTER DATABASE safetica_data SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+ALTER DATABASE safetica_data MODIFY FILEGROUP safetica_data_fg READWRITE;
+ALTER DATABASE safetica_data SET MULTI_USER
+                            </div>
+                            <div class="note">
+                                <p>Note: if you have Safetica database installed with a different prefix you will need to adjust the query accordingly. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-header" onclick="toggleIssue(this)">
+                        <span class="issue-title">💥 Database is Full</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="issue-content">
+                        <div class="symptoms">
+                            <h4>Symptoms:</h4>
+                            <p>The most common issue for the failing initialization of SQL is the lack of database space. This happens most commonly due to the fact that the Express version of the SQL server has a limitation of 10GB per database. When the service is running for an extended period of time without regular maintenance, this limit gets exhausted and database function is hindered. To verify this situation you can check SQL logs via SQL management studio. In here you will see information about exceeding the allocated space.</p>
+                            <p>In the case of the SQL Standard version, which does not have the pre-defined limitation for database size, it is dependent on the available disk space. This space can be filled up by the database itself, or by transaction log, which stores information about the active transactions.</p>
+                        </div>
+                        <div class="reason">
+                            <h4>Issue Source:</h4>
+                            <p>If the customer reports a full database there are several options based on how did the database fill up. Try to understand what had happened and ask the customer for additional info on what precluded the issue. Then based on that you can follow one of the steps further</p>
+                            <ul>
+                                <li>The database is filled up with logs, during normal usage
+                                    <ul>
+                                        <li>That means that they have automatic backup and overwrite enabled which prevents the database from stopping</li>
+                                        <li>They are able to get into the console</li>
+                                        <li>Normal archivation tasks should work just fine, it is sufficient to create backup and delete task to clean up space</li>
+                                    </ul>
+                                </li>
+                                <li>Database filled up during update and the update failed (console is available)
+                                    <ul>
+                                        <li>in some rare cases when the update fails it is still possible to access the console</li>
+                                        <li>in such cases run archivation tasks</li>
+                                    </ul>
+                                </li>
+                                <li>Database filled up during update - update is ongoing (console is unavailable)
+                                    <ul>
+                                        <li>most of the cases are connected to an update during which the SMS is updated correctly but the conversion scripts that should run during the update do not have sufficient space in DB and get stuck</li>
+                                        <li>Check the DB error log via SQL management studio, you should be able to see a log about exceeding the allocated database size</li>
+                                        <li>In such a case, you will need to perform manual DB cleanup. This is targeted mainly on the file_operation_log as it is usually the largest and most frequently modified. Therefore if new columns are added to a large number of rows it requires a sufficient amount of disk space.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fix">
+                            <h4>Fix:</h4>
+                            <p>Besides the insufficient space in the database, another possible issue is insufficient disk space for the transaction log. This log stores information about active transactions and their modification in case of any failure. In such a case, data stored in the log is used for reverting the transactions to the original state.</p>
+                            <p>Due to this logic, transactions that modify large amounts of data need to log their activity. This increases the size of the log, and in the case of large databases or smaller disks, it might take all of the free disk space.</p>
+                            <p>There are some general recommendations on what to do to minimize the size of the log and avoid potential issues.</p>
+                            <ul>
+                                <li>Keep the database size in a reasonable size. We recommend keeping 6 months of data in the database and older data in backup archives. This ensures that the database size remains at reasonable levels and improves performance during the updates and modifications.</li>
+                                <li>Make sure that there is enough disk space. Take into consideration the warnings before the update if there is insufficient disk space on the database server</li>
+                                <li>As an advanced measure, you can keep the transaction log on a separate disk, which you can increase/decrease in size depending on your needs</li>
+                                <li>Keep the recovery model in database settings on Simple. This ensures that when the transaction finishes successfully transaction log is cleared and returned back to minimum size.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SQL Installation Tips Section -->
+        <section id="sql-install-tips" class="section">
+            <div class="section-header">
+                <h2>🗄️ SQL Installation Tips</h2>
+                <p>Automatic and manual SQL setup guidance</p>
+            </div>
+            <div class="section-content">
+                <p>The installation package of MS SQL 2017 Express is included in the Safetica installation package. However, SQL server can be independently or within the automatic installation of Safetica. It is also possible to connect Safetica to a database server that already has other databases running. In such a case, make sure that this server has enough hardware resources to run multiple instances/databases.</p>
+                <h3>Supported Versions</h3>
+                <ul>
+                    <li>For a direct installation, minimum of MS SQL 2012 and above, with MS SQL 2016 as a recommended SQL version</li>
+                    <li>For migration or clean installation of the database server, we recommend using an updated server to the latest versions including service packs</li>
+                </ul>
+                <div class="note">
+                    <p>Note: During the migration, you might encounter an error when moving to MS SQL 2016 without a service pack, as it does not support clustered column store indexes used in our design. That is why we recommend making sure that you are always running the latest build of the SQL server.</p>
+                </div>
+                <h3>Automatic Installation</h3>
+                <ul>
+                    <li>All configuration is done automatically</li>
+                    <li>Service account Safetica is created automatically during the installation of SMS with sysadmin permissions</li>
+                    <li>The default password for "safetica" account is S@fetic@2004</li>
+                    <li>Safetica Management Service will have a pre-defined connection to the database via the above-mentioned account</li>
+                    <li>The default instance name is SERVERNAME\SAFETICA</li>
+                </ul>
+                <h3>Manual Installation from Safetica Installer Package</h3>
+                <ul>
+                    <li>Can be automatically started from Safetica installer during installation of Safetica Management Service via "New installation of SQL Server Express"</li>
+                </ul>
+                <p>Installation from the Safetica package differs from an SQL installer downloaded from the official websites. These are the main differences:</p>
+                <ul>
+                    <li>During the installation, the install directory cannot be selected</li>
+                    <li>"sa" account cannot be configured</li>
+                    <li>you cannot specify services which you want to install</li>
+                    <li>the only thing that can be changed is the instance name</li>
+                    <li>in order to modify installation properties, the corresponding (or newer) version of the SQL server has to be downloaded from the official websites</li>
+                </ul>
+                <h3>Manual Installation from Other Sources</h3>
+                <p>If there is already SQL server installed it is not necessary to install it again. You can create a separate instance on an already existing SQL server if it meets the recommended settings.</p>
+                <p>We recommend creating a separate instance for Safetica databases, however, an already existing instance can be used. In order to do so, you have to specify the connection details manually as can be seen in section SMS - Installation. </p>
+                <h3>Potential Network Issues When Connecting to Already Installed SQL Server</h3>
+                <p>When using an existing instance or SQL server was installed from another source, there are some pre-requisites that might not be set by default and need to be adjusted manually. In order to connect SMS to the database server you will need:</p>
+                <ul>
+                    <li>Running SQL Browser service, which is responsible for delegating the incoming connections. The current state of the SQL browser can be verified via the SQL server configuration manager</li>
+                    <li>Another requirement is to have enabled Named Pipes and TCP/IP protocol for SQL. This can be adjusted in SQL Server Configuration Manager - SQL Server Network configuration - Protocols for "INSTANCENAME". In this view, you can verify the current settings, as well as the IP address of the server and port settings for the SQL. If the TCP Dynamic Ports is set to 0 it means that the dynamic ports are enabled. If there are other settings stated, it has to be taken into consideration when setting Database Connection in Safetica Management Console - Profile.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Downloads and Resources Section -->
         <section class="section">
             <div class="section-header">
-                <h2>🔗 Essential Downloads & Resources</h2>
-                <p>Official Microsoft tools and Safetica resources</p>
+                <h2>📥 Essential Downloads & Resources</h2>
+                <p>Official software downloads, tools, and documentation links</p>
             </div>
             <div class="section-content">
-                <div class="download-links">
-                    <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads" class="download-link" target="_blank">
-                        📥 SQL Server 2022 Express<br>
-                        <small>Free edition for development & production</small>
-                    </a>
-                    <a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms" class="download-link" target="_blank">
-                        🛠️ SQL Server Management Studio<br>
-                        <small>SSMS 21 - Latest version</small>
-                    </a>
-                    <a href="https://support.safetica.com" class="download-link" target="_blank">
-                        📚 Safetica Support<br>
-                        <small>Official documentation & guides</small>
-                    </a>
-                    <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53344" class="download-link" target="_blank">
-                        ⚙️ .NET Framework<br>
-                        <small>Latest version required</small>
-                    </a>
+                <div class="download-section">
+                    <h3>🔗 Microsoft Downloads</h3>
+                    <div class="download-grid">
+                        <div class="download-card">
+                            <h4>🌐 .NET Framework 4.8.1</h4>
+                            <p>Web installer - requires internet connection</p>
+                            <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer" class="download-link" target="_blank">Web Installer<grok-card data-id="dce08e" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>💾 .NET Framework 4.8.1</h4>
+                            <p>Offline installer - complete complete package</p>
+                            <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-offline-installer" class="download-link" target="_blank">Offline Installer<grok-card data-id="262f98" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>🗄️ SQL Server 2022 Express</h4>
+                            <p>Free database server for small deployments</p>
+                            <a href="https://www.microsoft.com/en-us/download/details.aspx?id=104781" class="download-link" target="_blank">Download SQL Express<grok-card data-id="16754b" data-type="citation_card"></grok-card></a>
+                        </div>
+                        <div class="download-card">
+                            <h4>🛠️ SQL Management Studio</h4>
+                            <p>Essential database management tool</p>
+                            <a href="https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms" class="download-link" target="_blank">Download SSMS<grok-card data-id="9c3297" data-type="citation_card"></grok-card></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="warning-box" style="margin-top: 2rem;">
-                    <h4>🎯 Quick Reference - Common File Locations:</h4>
-                    <ul>
-                        <li><strong>Activity Monitor:</strong> <code>C:\Program Files\Safetica Management Service\Tools\STActivityMonitor.exe</code></li>
-                        <li><strong>Debug Logs:</strong> <code>C:\programdata\Safetica Management Service\debuglog.txt</code></li>
-                        <li><strong>Service Logs:</strong> <code>C:\programdata\Safetica Management Service\logs\service_lastrun.txt</code></li>
-                        <li><strong>SMS Registry:</strong> <code>HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service</code></li>
-                    </ul>
+                    <h4>🎯 Quick Reference - Essential File Locations:</h4>
+                    <div class="code-block"># SMS Installation and Tools
+C:\Program Files\Safetica Management Service\
+C:\Program Files\Safetica Management Service\Tools\STActivityMonitor.exe
+
+# Log Files (Critical for Troubleshooting)
+C:\ProgramData\Safetica Management Service\debuglog.txt
+C:\ProgramData\Safetica Management Service\logs\service_lastrun.txt
+
+# Registry Configuration
+HKEY_LOCAL_MACHINE\SOFTWARE\Safetica Technologies\Safetica Management Service
+
+# Service Management
+services.msc → "Safetica Management Service"</div>
                 </div>
 
                 <div class="info-box" style="margin-top: 1rem;">
-                    <h4>🚨 Emergency Commands:</h4>
-                    <div class="code-block"># Redirect clients to alternative port
+                    <h4>🚨 Emergency Command Reference:</h4>
+                    <div class="code-block"># Client Redirection (Maintenance Mode)
 STAservice.exe -clientport 44382
+net restart "Safetica Management Service"
 
-# Restore default port  
+# Restore Normal Operations
 STAservice.exe -clientport 4438
+net restart "Safetica Management Service"
 
-# Force kill service
+# Force Service Management
 taskkill /f /im staservice.exe
+net start "Safetica Management Service"
 
-# Check SQL service status
-services.msc</div>
+# SQL Server Service Check
+sc query MSSQLSERVER
+sc query "MSSQL$SAFETICA"
+
+# Network Connectivity Tests
+telnet sqlserver 1433
+Test-NetConnection sqlserver -Port 1433</div>
+                </div>
+
+                <div class="success-box" style="margin-top: 1rem;">
+                    <h4>📞 Support Resources:</h4>
+                    <ul>
+                        <li><strong>Safetica Support Portal:</strong> <a href="https://support.safetica.com" target="_blank">support.safetica.com<grok-card data-id="c7e617" data-type="citation_card"></grok-card></a></li>
+                        <li><strong>Database Cleanup Queries:</strong> Contact Safetica Support for environment-specific queries</li>
+                        <li><strong>Implementation Guides:</strong> Available on support portal for detailed setup instructions</li>
+                        <li><strong>System Requirements:</strong> Latest hardware recommendations at support.safetica.com</li>
+                        <li><strong>Best Practices:</strong> Architecture guides for enterprise deployments</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
             <div>
-                <h3>🛡️ Safetica Management Service Troubleshooting Guide</h3>
-                <p>Professional Knowledge Base | Version 2024.1</p>
-                <p style="margin-top: 1rem; opacity: 0.8;">
-                    💡 <strong>Pro Tip:</strong> Always check Activity Monitor first for real-time system status<br>
-                    🔧 For complex issues, collect debuglog.txt and service_lastrun.txt before contacting support<br>
-                    📞 <strong>Support:</strong> Contact Safetica Support for database cleanup queries and advanced troubleshooting
+                <h3>🛡️ Safetica Server - Complete Technical Guide</h3>
+                <p>Professional Knowledge Base | Version 2024.2 | Updated for Latest Releases</p>
+                <p style="margin-top: 1.5rem; opacity: 0.9; line-height: 1.8;">
+                    <strong>🎯 Quick Start:</strong> Download → Install .NET 4.8.1 → Run Setup as Admin → Configure SQL<br>
+                    <strong>💡 First Issue?</strong> Check Activity Monitor → Review common issues section → Follow systematic troubleshooting<br>
+                    <strong>🔧 Complex Problems:</strong> Collect debuglog.txt + service_lastrun.txt → Contact Safetica Support with specific error messages<br>
+                    <strong>📊 Performance:</strong> Monitor queues in Activity Monitor → Check hardware resources → Scale SQL if needed
                 </p>
+                <div style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="opacity: 0.7; font-size: 0.9rem;">
+                        Created by Senior Software Engineering Team | 25+ Years Experience | Enterprise-Grade Documentation Standards<br>
+                        Covers Safetica Management Service 9.9.31+ with complete installation, configuration, and troubleshooting procedures
+                    </p>
+                </div>
             </div>
         </footer>
     </div>
@@ -1120,81 +1742,90 @@ services.msc</div>
             }
         }
 
-        // Search functionality
+        // Enhanced search functionality
         document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
+            const searchTerm = e.target.value.toLowerCase().trim();
             const sections = document.querySelectorAll('.section');
             const issueCards = document.querySelectorAll('.issue-card');
+            const commonCards = document.querySelectorAll('.common-issue-card');
+            const searchResults = document.getElementById('searchResults');
             
             if (searchTerm === '') {
-                // Show all sections and cards
+                // Show all content
                 sections.forEach(section => section.style.display = 'block');
                 issueCards.forEach(card => card.style.display = 'block');
+                searchResults.style.display = 'none';
                 return;
             }
-            
-            let hasVisibleContent = false;
-            
+
+            let matchCount = 0;
+            let matchedTopics = [];
+
+            // Search through sections and issue cards
             sections.forEach(section => {
                 let sectionHasMatch = false;
                 const sectionText = section.textContent.toLowerCase();
+                const sectionTitle = section.querySelector('.section-header h2')?.textContent || '';
                 
                 if (sectionText.includes(searchTerm)) {
                     sectionHasMatch = true;
+                    matchedTopics.push(sectionTitle);
                 }
                 
-                // Check individual issue cards within this section
+                // Check individual issue cards
                 const cardsInSection = section.querySelectorAll('.issue-card');
                 cardsInSection.forEach(card => {
                     const cardText = card.textContent.toLowerCase();
+                    const cardTitle = card.querySelector('.issue-title')?.textContent || '';
+                    
                     if (cardText.includes(searchTerm)) {
                         card.style.display = 'block';
                         sectionHasMatch = true;
-                        hasVisibleContent = true;
+                        matchCount++;
+                        if (!matchedTopics.includes(cardTitle)) {
+                            matchedTopics.push(cardTitle);
+                        }
                     } else {
                         card.style.display = 'none';
                     }
                 });
                 
                 section.style.display = sectionHasMatch ? 'block' : 'none';
-                if (sectionHasMatch) hasVisibleContent = true;
             });
+
+            // Search through common issues
+            commonCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    matchCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show search results summary
+            if (matchCount > 0) {
+                searchResults.innerHTML = `
+                    <strong>🔍 Found ${matchCount} matches for "${searchTerm}"</strong><br>
+                    <small>Matching topics: ${matchedTopics.slice(0, 3).join(', ')}${matchedTopics.length > 3 ? '...' : ''}</small>
+                `;
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = `
+                    <strong>❌ No results found for "${searchTerm}"</strong><br>
+                    <small>Try searching for: installation, database, error, update, SQL, port, or specific error messages</small>
+                `;
+                searchResults.style.display = 'block';
+            }
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation
         document.querySelectorAll('.nav-item').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Auto-expand first issue in each section for better UX
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstIssues = document.querySelectorAll('.section .issue-card:first-of-type .issue-header');
-            firstIssues.forEach(header => {
-                // Uncomment the line below if you want the first issue in each section to be auto-expanded
-                // toggleIssue(header);
-            });
-        });
-
-        // Add hover effect for better interactivity
-        document.querySelectorAll('.issue-header').forEach(header => {
-            header.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#d63031';
-                this.style.transform = 'translateX(5px)';
-            });
-            
-            header.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '';
-                this.style.transform = '';
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
